@@ -73,6 +73,10 @@ public class login_form extends AppCompatActivity {
                             dialog = builder.setMessage("사용할 수 없는 아이디입니다.").setNegativeButton("확인",null).create();
                             dialog.show();
 
+                        }else{
+                            AlertDialog.Builder builder = new AlertDialog.Builder(login_form.this);
+                            dialog = builder.setMessage("사용할 수 있는 아이디입니다.").setNegativeButton("확인",null).create();
+                            dialog.show();
                         }
                     }
 
@@ -85,7 +89,7 @@ public class login_form extends AppCompatActivity {
                 public void onClick(View view) {
                     String u_id = edt_id.getText().toString();
                     String u_pw = edt_pw.getText().toString();
-                    String u_pwcheck = edt_pw_check.toString();
+                    String u_pwcheck = edt_pw_check.getText().toString();
                     String u_name = edt_name.getText().toString();
                     String u_ph = edt_ph_num.getText().toString();
                     int id = edt_gender.getCheckedRadioButtonId();
@@ -105,7 +109,7 @@ public class login_form extends AppCompatActivity {
                         AlertDialog.Builder builder = new AlertDialog.Builder(login_form.this);
                         dialog = builder.setMessage("입력되지 않은 항목이 있습니다.").setNegativeButton("확인", null).create();
                         dialog.show();
-                    } else {
+                    }else if( u_pw.equals(u_pwcheck)){
                         HashMap<Object, String> hashMap = new HashMap<>();
                         hashMap.put("uid", u_id);
                         hashMap.put("upw", u_pw);
@@ -135,7 +139,10 @@ public class login_form extends AppCompatActivity {
 
                         Toast.makeText(login_form.this, "회원가입이 되었습니다.", Toast.LENGTH_SHORT).show();
 
-
+                    }else {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(login_form.this);
+                        dialog = builder.setMessage("비밀번호가 다릅니다.").setNegativeButton("확인", null).create();
+                        dialog.show();
                     }
                 }
             });
