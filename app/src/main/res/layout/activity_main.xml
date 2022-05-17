@@ -17,14 +17,16 @@
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
         android:layout_marginBottom="81dp"
+        android:hint="@string/password_input"
         android:inputType="textPassword"
-        android:textSize="20dp"
-        android:hint="비밀번호"
+        android:textColorHint="#78909C"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/login_id"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_id" />
+        app:layout_constraintTop_toBottomOf="@+id/login_id"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/log_id"
@@ -32,7 +34,9 @@
         android:layout_height="70dp"
         android:layout_marginTop="263dp"
         android:layout_marginBottom="32dp"
-        android:hint="아이디"
+        android:autofillHints=""
+        android:hint="@string/string_string_input_hint"
+        android:inputType="text"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/log_pw"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,8 +50,8 @@
         android:layout_height="56dp"
         android:layout_marginTop="520dp"
         android:layout_marginBottom="23dp"
-        android:text="로그인"
-        android:textSize="25dp"
+        android:text="@string/input_id"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/create_customer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,11 +63,12 @@
         android:layout_height="56dp"
         android:layout_marginTop="23dp"
         android:layout_marginBottom="76dp"
-        android:text="회원가입"
-        android:textSize="25dp"
+        android:contentDescription="@string/button_input"
+        android:text="@string/button_input"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_id"/>
+        app:layout_constraintTop_toBottomOf="@+id/login_id" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
