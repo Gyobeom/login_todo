@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.util.Log;
@@ -138,6 +139,9 @@ public class login_form extends AppCompatActivity {
                         });
 
                         Toast.makeText(login_form.this, "회원가입이 되었습니다.", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(login_form.this,MainActivity.class);
+                        startActivity(intent);
+                        finish();
 
                     }else {
                         AlertDialog.Builder builder = new AlertDialog.Builder(login_form.this);
