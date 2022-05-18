@@ -72,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
                                                         dialog = builder.setMessage("로그인 되었습니다.").setNegativeButton("확인",null).create();
                                                         dialog.show();
                                                         id_array.clear();
+                                                        Intent intent = new Intent(MainActivity.this,memo.class);
+                                                        startActivity(intent);
                                                     }else{
                                                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                                                         dialog = builder.setMessage("비밀번호를 확인해주세요.").setNegativeButton("확인",null).create();

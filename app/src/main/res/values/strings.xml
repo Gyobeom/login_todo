@@ -12,7 +12,6 @@
     <string name="password_input">비밀번호</string>
     <string name="input_id">로그인</string>
     <string name="button_input">회원가입</string>
-    <string name="input_hint">아이디</string>
-    <string name="string_input_hint">아이디</string>
-    <string name="string_string_input_hint">아이디</string>
+    <string name="id_hint">아이디</string>
+    <string name="pw_hint">비밀번호</string>
 </resources>
