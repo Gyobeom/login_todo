@@ -73,11 +73,13 @@ public class login_form extends AppCompatActivity {
                             AlertDialog.Builder builder = new AlertDialog.Builder(login_form.this);
                             dialog = builder.setMessage("사용할 수 없는 아이디입니다.").setNegativeButton("확인",null).create();
                             dialog.show();
+                            break;
 
                         }else{
                             AlertDialog.Builder builder = new AlertDialog.Builder(login_form.this);
                             dialog = builder.setMessage("사용할 수 있는 아이디입니다.").setNegativeButton("확인",null).create();
                             dialog.show();
+                            break;
                         }
                     }
 

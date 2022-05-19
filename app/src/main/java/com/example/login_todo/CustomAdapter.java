@@ -1,13 +1,22 @@
 package com.example.login_todo;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -15,7 +24,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
     private ArrayList<Mcontent> arrayList;
     private Context context; //어댑트에서 액티비티 액션을 가져올 때 context가 필요함 선택된 액티비티 context가져올 때 필요
-
     public CustomAdapter(ArrayList<Mcontent> arrayList,Context context) {
         this.arrayList = arrayList;
         this.context = context;
@@ -44,12 +52,43 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         return (arrayList != null ? arrayList.size() : 0);
     }
 
-    public class CustomViewHolder extends RecyclerView.ViewHolder {
-        CheckBox ch_memo;
 
+    public class CustomViewHolder extends RecyclerView.ViewHolder {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference().child("Memo");
+        CheckBox ch_memo;
+        Button btn;
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
             this.ch_memo = itemView.findViewById(R.id.tv_memo);
+            btn = itemView.findViewById(R.id.delete_memo);
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String ch_text = ch_memo.getText().toString();
+                    myRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for(DataSnapshot parentsnap : snapshot.getChildren()){
+                                String ma = parentsnap.child("memo").getValue().toString();
+                                if (ma.equals(ch_text)){
+                                    myRef.child(parentsnap.getKey()).setValue(null);
+                                    System.out.println("삭제되었습니다.");
+                                }
+
+                            }
+                        }
+
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+                }
+            });
         }
     }
+
 }

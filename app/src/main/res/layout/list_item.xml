@@ -24,7 +24,8 @@
                 android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="X"></Button>
+                android:text="X"
+                ></Button>
         </LinearLayout>
 
     </LinearLayout>
