@@ -24,6 +24,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private AlertDialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         EditText login_id_text = findViewById(R.id.log_id);
         EditText login_pw_text = findViewById(R.id.log_pw);
         ArrayList<String> id_array = new ArrayList<>();
+
 
         Button btn = findViewById(R.id.create_customer);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                                                     dialog = builder.setMessage("로그인 되었습니다.").setNegativeButton("확인",null).create();
                                                     dialog.show();
                                                     id_array.clear();
+                                                //    Intent intent = new Intent(MainActivity.this,memo.class);
                                                     Intent intent = new Intent(MainActivity.this,memo.class);
                                                     intent.putExtra("user_id",user_id );
                                                     startActivity(intent);

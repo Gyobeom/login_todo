@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".home"
+    android:orientation="vertical">
+    <!-- TODO: Update blank fragment layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/todo_text"
+                    android:layout_width="320dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="5dp">
+                </EditText>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:id="@+id/make_todo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:onClick="make_todo"
+                        android:textSize="15sp"
+                        app:backgroundTint="#FFFFFF"
+                        app:icon="@drawable/baseline_done_24"
+                        app:iconTint="#000000"></Button>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_frag"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical" />
+        </LinearLayout>
+</LinearLayout>

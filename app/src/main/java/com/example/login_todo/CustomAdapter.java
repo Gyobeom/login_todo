@@ -1,6 +1,7 @@
 package com.example.login_todo;
 
 import android.content.Context;
+import android.nfc.Tag;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +34,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     @Override
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //리스트뷰 어댑트 연결 후 뷰홀더 생성
+        Log.d(String.valueOf(this),"on createViewHolder 들어옴");
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item,parent,false);
         CustomViewHolder holder = new CustomViewHolder(view);
 
