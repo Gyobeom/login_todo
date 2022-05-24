@@ -6,7 +6,7 @@
         android:enabled="true"
         android:icon="@drawable/baseline_home_24"
         android:title="홈"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
     <item
         android:id="@+id/board"
         android:enabled="true"

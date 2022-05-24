@@ -1,6 +1,7 @@
 package com.example.login_todo;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,6 +33,8 @@ public class login_form extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_form);
+            ActionBar actionBar = getSupportActionBar();
+            actionBar.hide();
             ArrayList<String> id_array = new ArrayList<>();
             EditText edt_id = findViewById(R.id.customer_id);
             EditText edt_pw = findViewById(R.id.f_pw);

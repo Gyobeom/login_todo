@@ -1,6 +1,7 @@
 package com.example.login_todo;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -46,6 +47,8 @@ public class main extends AppCompatActivity {
         homeFragment = new home();
         boardFragment = new board();
         boardWriteFragment = new board_write();
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
 //        recyclerView = findViewById(R.id.recyclerView); //아이디 연결
 //        recyclerView.setHasFixedSize(true); //리사이클러뷰 성능강화

@@ -19,6 +19,7 @@
                 android:padding="16dp"
                 android:textStyle="bold"
                 android:textSize="16sp"
+                android:gravity="center"
                 android:text="제목">
             </TextView>
             <EditText
@@ -28,9 +29,18 @@
                 android:padding="16dp"
                 android:hint="제목을 입력해주세요"
                 android:background="#eeeeee"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:singleLine="true"
+                >
             </EditText>
+
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#000000"
+            >
+        </View>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,6 +52,7 @@
                 android:text="작성자"
                 android:textStyle="bold"
                 android:textSize="16sp"
+                android:gravity="center"
                 >
             </TextView>
             <TextView
@@ -54,7 +65,14 @@
                 android:background="#eeeeee"
                 android:layout_weight="1">
             </TextView>
+
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#000000"
+            >
+        </View>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,22 +82,27 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:text="내용"
+                android:textSize="16sp"
                 android:background="#eeeeee"
                 android:gravity="center">
             </TextView>
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#000000"
+            >
+        </View>
 
         <EditText
             android:id="@+id/board_content"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:padding="16dp"
-            android:text="내용들"
-            android:gravity="top"
-            android:inputType="textMultiLine|textNoSuggestions"
+            android:layout_height="436dp"
             android:background="@null"
-            >
-        </EditText>
+            android:gravity="top"
+            android:hint="내용을 입력해주세요"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:padding="16dp"></EditText>
 
         <Button
             android:id="@+id/input_board"
@@ -87,6 +110,7 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:text="저장"
+            android:textSize="16sp"
             app:backgroundTint="#9A9191">
 
         </Button>
