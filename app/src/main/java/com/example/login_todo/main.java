@@ -2,6 +2,9 @@ package com.example.login_todo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,7 +26,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class memo extends AppCompatActivity {
+public class main extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -33,6 +36,7 @@ public class memo extends AppCompatActivity {
     private DatabaseReference databaseReference;
     home homeFragment;
     board boardFragment;
+    board_write boardWriteFragment;
 
 
     @Override
@@ -41,6 +45,7 @@ public class memo extends AppCompatActivity {
         setContentView(R.layout.activity_memo);
         homeFragment = new home();
         boardFragment = new board();
+        boardWriteFragment = new board_write();
 
 //        recyclerView = findViewById(R.id.recyclerView); //아이디 연결
 //        recyclerView.setHasFixedSize(true); //리사이클러뷰 성능강화
@@ -59,6 +64,9 @@ public class memo extends AppCompatActivity {
                         return true;
                     case R.id.board:
                         getSupportFragmentManager().beginTransaction().replace(R.id.containers,boardFragment).commit();
+                        return true;
+                    case R.id.board_write:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.containers,boardWriteFragment).commit();
                         return true;
                 }
                 return false;

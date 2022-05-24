@@ -14,6 +14,12 @@
         android:title="게시판"
         app:showAsAction="always"/>
     <item
+        android:id="@+id/board_write"
+        android:enabled="true"
+        android:icon="@drawable/baseline_edit_24"
+        android:title="글 작성"
+        app:showAsAction="always"/>
+    <item
         android:id="@+id/chat"
         android:enabled="true"
         android:icon="@drawable/baseline_chat_bubble_24"

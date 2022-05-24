@@ -37,10 +37,6 @@ public class home extends Fragment implements View.OnClickListener {
     private DatabaseReference databaseReference;
     private int check_text;
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-
     public home() {
         // Required empty public constructor
     }

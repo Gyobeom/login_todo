@@ -4,25 +4,22 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class loginActivity extends AppCompatActivity {
     private AlertDialog dialog;
 
     @Override
@@ -38,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,login_form.class);
+                Intent intent = new Intent(loginActivity.this,login_form.class);
                 startActivity(intent);
                 finish();
             }
@@ -68,16 +65,16 @@ public class MainActivity extends AppCompatActivity {
                                                 Log.d(String.valueOf(this),check_pw);
                                                 if(check_pw.equals(user_pw)){
                                                     Log.d(String.valueOf(this),"비밀번호 체크");
-                                                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                                                    AlertDialog.Builder builder = new AlertDialog.Builder(loginActivity.this);
                                                     dialog = builder.setMessage("로그인 되었습니다.").setNegativeButton("확인",null).create();
                                                     dialog.show();
                                                     id_array.clear();
                                                 //    Intent intent = new Intent(MainActivity.this,memo.class);
-                                                    Intent intent = new Intent(MainActivity.this,memo.class);
+                                                    Intent intent = new Intent(loginActivity.this, main.class);
                                                     intent.putExtra("user_id",user_id );
                                                     startActivity(intent);
                                                 }else{
-                                                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                                                    AlertDialog.Builder builder = new AlertDialog.Builder(loginActivity.this);
                                                     dialog = builder.setMessage("비밀번호를 확인해주세요.").setNegativeButton("확인",null).create();
                                                     dialog.show();
                                                     id_array.clear();
@@ -92,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 });
                             }else {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(loginActivity.this);
                                 dialog = builder.setMessage("아이디를 확인해주세요.").setNegativeButton("확인",null).create();
                                 dialog.show();
                                 id_array.clear();

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".board_write">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="제목">
+            </TextView>
+            <EditText
+                android:id="@+id/board_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:hint="제목을 입력해주세요"
+                android:background="#eeeeee"
+                android:layout_weight="1">
+            </EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="작성자"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                >
+            </TextView>
+            <TextView
+                android:id="@+id/board_writer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:background="#eeeeee"
+                android:layout_weight="1">
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="내용"
+                android:background="#eeeeee"
+                android:gravity="center">
+            </TextView>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/board_content"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:padding="16dp"
+            android:text="내용들"
+            android:gravity="top"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:background="@null"
+            >
+        </EditText>
+
+        <Button
+            android:id="@+id/input_board"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="저장"
+            app:backgroundTint="#9A9191">
+
+        </Button>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

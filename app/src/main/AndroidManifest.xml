@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login_todo" >
         <activity
-            android:name=".memo"
+            android:name=".main"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".loginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
