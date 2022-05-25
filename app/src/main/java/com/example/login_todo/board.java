@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,13 +42,15 @@ public class board extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
+
         View view = inflater.inflate(R.layout.fragment_board,container,false);
         Context context = view.getContext();
         recyclerView = view.findViewById(R.id.recyclerView_board);
@@ -64,7 +67,7 @@ public class board extends Fragment {
                 arrayList.clear();
                 for(DataSnapshot snapshot1: snapshot.getChildren()){
                     String test = snapshot1.getValue().toString();
-                    System.out.println(test );
+                    System.out.println(test);
                     Bcontent bcontent = snapshot1.getValue(Bcontent.class);
                     arrayList.add(bcontent);
                 }
@@ -81,4 +84,5 @@ public class board extends Fragment {
 
         return view;
     }
+
 }

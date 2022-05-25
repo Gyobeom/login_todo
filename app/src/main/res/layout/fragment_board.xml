@@ -7,17 +7,6 @@
     tools:context=".board">
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="16dp"
-        android:clickable="true"
-        android:contentDescription="@string/submit_board"
-        android:src="@drawable/baseline_edit_24"
-        app:backgroundTint="#FFFFFF" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_board"
         android:layout_width="match_parent"

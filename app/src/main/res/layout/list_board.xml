@@ -11,6 +11,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:padding="16dp"
+            android:textStyle="bold"
             android:text="제목">
         </TextView>
 
@@ -19,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text=""
+            android:textStyle="bold"
             android:background="#eeeeee"
             android:layout_weight="1">
         </TextView>
@@ -33,6 +34,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:padding="16dp"
+            android:textStyle="bold"
             android:text="작성자">
         </TextView>
 
@@ -43,13 +45,14 @@
             android:layout_weight="1"
             android:background="#eeeeee"
             android:padding="16dp"
+            android:textStyle="bold"
             android:text=""></TextView>
         <TextView
             android:id="@+id/board_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text=""
+            android:textStyle="bold"
             android:background="#eeeeee"
             android:layout_weight="1">
         </TextView>

@@ -1,20 +1,25 @@
 package com.example.login_todo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class CustomAdapterBoard extends RecyclerView.Adapter<CustomAdapterBoard.CustomViewHolder>{
     private ArrayList<Bcontent> arrayList;
+    private Bcontent arrayList2;
     private Context context;
+    private AdapterView.OnItemClickListener itemClickListener;
 
     public CustomAdapterBoard(ArrayList<Bcontent> arrayList, Context context){
         this.arrayList = arrayList;
@@ -52,6 +57,23 @@ public class CustomAdapterBoard extends RecyclerView.Adapter<CustomAdapterBoard.
             this.board_title = itemView.findViewById(R.id.board_title);
             this.board_writer = itemView.findViewById(R.id.board_writer);
             this.board_date = itemView.findViewById(R.id.board_date);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int pos = getAdapterPosition();
+                    if(pos != RecyclerView.NO_POSITION){
+                        String s = arrayList.get(pos).getBcontent();
+                        System.out.println(s);
+                        Intent intent = new Intent(view.getContext(),Boardinfo.class);
+                        intent.putExtra("boardtitle",arrayList.get(pos).getBtitle());
+                        intent.putExtra("boardwriter",arrayList.get(pos).getBwriter());
+                        intent.putExtra("boardcontent",arrayList.get(pos).getBcontent());
+                        view.getContext().startActivity(intent);
+                    }
+                }
+            });
         }
     }
+
 }
