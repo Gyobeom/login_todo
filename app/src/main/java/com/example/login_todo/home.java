@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -93,6 +94,8 @@ public class home extends Fragment implements View.OnClickListener {
                 Log.e("memo", String.valueOf(error.toException()));
             }
         });
+        ActionBar actionBar =((main)getActivity()).getSupportActionBar();
+        actionBar.setTitle("TODOLIST");
         adapter = new CustomAdapter(arrayList, getActivity());
         recyclerView.setAdapter(adapter); //리사이클러뷰에 어댑터 연결
 

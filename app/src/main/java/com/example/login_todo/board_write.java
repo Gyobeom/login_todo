@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -55,6 +56,9 @@ public class board_write extends Fragment implements View.OnClickListener{
 
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference().child("Board");
+
+        ActionBar actionBar =((main)getActivity()).getSupportActionBar();
+        actionBar.setTitle("게시글 작성");
 
 //        Log.d(String.valueOf(this),"board_write 진입했습니다.");
 //        Log.d(String.valueOf(this),user_id);

@@ -1,6 +1,7 @@
 package com.example.login_todo;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,6 +30,9 @@ public class loginActivity extends AppCompatActivity {
         EditText login_id_text = findViewById(R.id.log_id);
         EditText login_pw_text = findViewById(R.id.log_pw);
         ArrayList<String> id_array = new ArrayList<>();
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
 
         Button btn = findViewById(R.id.create_customer);
@@ -73,6 +77,8 @@ public class loginActivity extends AppCompatActivity {
                                                     Intent intent = new Intent(loginActivity.this, main.class);
                                                     intent.putExtra("user_id",user_id );
                                                     startActivity(intent);
+                                                    dialog.dismiss();
+                                                    finish();
                                                 }else{
                                                     AlertDialog.Builder builder = new AlertDialog.Builder(loginActivity.this);
                                                     dialog = builder.setMessage("비밀번호를 확인해주세요.").setNegativeButton("확인",null).create();

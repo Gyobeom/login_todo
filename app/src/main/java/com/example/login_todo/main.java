@@ -38,6 +38,7 @@ public class main extends AppCompatActivity {
     home homeFragment;
     board boardFragment;
     board_write boardWriteFragment;
+    chat chatFragment;
 
 
     @Override
@@ -47,8 +48,9 @@ public class main extends AppCompatActivity {
         homeFragment = new home();
         boardFragment = new board();
         boardWriteFragment = new board_write();
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
+        chatFragment = new chat();
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.hide();
 
 //        recyclerView = findViewById(R.id.recyclerView); //아이디 연결
 //        recyclerView.setHasFixedSize(true); //리사이클러뷰 성능강화
@@ -70,6 +72,9 @@ public class main extends AppCompatActivity {
                         return true;
                     case R.id.board_write:
                         getSupportFragmentManager().beginTransaction().replace(R.id.containers,boardWriteFragment).commit();
+                        return true;
+                    case R.id.chat:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.containers,chatFragment).commit();
                         return true;
                 }
                 return false;

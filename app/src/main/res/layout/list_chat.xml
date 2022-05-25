@@ -16,7 +16,7 @@
         </TextView>
 
         <TextView
-            android:id="@+id/board_title"
+            android:id="@+id/chat_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
@@ -35,11 +35,11 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:textStyle="bold"
-            android:text="작성자">
+            android:text="방장">
         </TextView>
 
         <TextView
-            android:id="@+id/board_writer"
+            android:id="@+id/chat_writer"
             android:layout_width="334dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -47,14 +47,7 @@
             android:padding="16dp"
             android:textStyle="bold"
             android:text=""></TextView>
-        <TextView
-            android:id="@+id/board_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:background="#eeeeee"
-            android:layout_weight="1">
-        </TextView>
+
     </LinearLayout>
     <View
         android:layout_width="match_parent"
