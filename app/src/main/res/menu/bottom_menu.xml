@@ -19,12 +19,12 @@
         android:icon="@drawable/baseline_edit_24"
         android:title="글 작성"
         app:showAsAction="always"/>
-    <item
-        android:id="@+id/chat"
-        android:enabled="true"
-        android:icon="@drawable/baseline_chat_bubble_24"
-        android:title="채팅"
-        app:showAsAction="always"/>
+<!--    <item-->
+<!--        android:id="@+id/chat"-->
+<!--        android:enabled="true"-->
+<!--        android:icon="@drawable/baseline_chat_bubble_24"-->
+<!--        android:title="채팅"-->
+<!--        app:showAsAction="always"/>-->
 
 
 </menu>

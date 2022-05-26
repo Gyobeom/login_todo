@@ -32,6 +32,7 @@ public class Boardinfo extends AppCompatActivity {
         b_title.setText(intent.getStringExtra("boardtitle"));
         b_writer.setText(intent.getStringExtra("boardwriter"));
         b_content.setText(intent.getStringExtra("boardcontent"));
+
         
 
     }

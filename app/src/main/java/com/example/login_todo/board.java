@@ -52,7 +52,8 @@ public class board extends Fragment {
         View view = inflater.inflate(R.layout.fragment_board,container,false);
         Context context = view.getContext();
 
-        recyclerView = view.findViewById(R.id.recyclerView_board);
+        recyclerView = view.findViewById(R.id.recyclerView_board
+        );
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(layoutManager);
